@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-labelledby="title desc">
+  <title id="title">Carli Special</title>
+  <desc id="desc">Carli Special monogram and wordmark with Hair Color, Confidence, You tagline.</desc>
+  <defs>
+    <style>
+      .serif{font-family:Georgia,"Times New Roman",serif}
+      .sans{font-family:Arial,Helvetica,sans-serif}
+    </style>
+  </defs>
+
+  <!-- Monogram -->
+  <g transform="translate(8 10)">
+    <circle cx="80" cy="80" r="67" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="80" cy="80" r="57" fill="none" stroke="#ffffff" stroke-width="1"/>
+    <text x="50" y="113" class="serif" font-size="104" fill="#e2b28e" letter-spacing="-24">C</text>
+    <text x="73" y="115" class="serif" font-size="104" fill="#e2b28e" letter-spacing="-22">S</text>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="180" y="80" class="serif" font-size="43" font-weight="400" letter-spacing="8.5" fill="#ffffff">CARLISPECIAL</text>
+  <line x1="181" y1="104" x2="539" y2="104" stroke="#e2b28e" stroke-width="1.2"/>
+  <circle cx="360" cy="104" r="3.8" fill="#e2b28e"/>
+  <text x="181" y="129" class="sans" font-size="10.5" letter-spacing="4.8" fill="#ffffff">HAIR COLOR  •  CONFIDENCE  •  YOU</text>
+</svg>

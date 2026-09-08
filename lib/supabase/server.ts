@@ -1,0 +1,23 @@
+import { createServerClient } from "@supabase/ssr";
+import { cookies } from "next/headers";
+
+export async function createClient() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  // Support both the current Supabase publishable key name and the older
+  // anon-key name so an existing local .env.local does not break the app.
+  const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!url) throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL in .env.local");
+  if (!key) throw new Error("Missing NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY (or NEXT_PUBLIC_SUPABASE_ANON_KEY) in .env.local");
+
+  const cookieStore = await cookies();
+  return createServerClient(url, key, {
+    cookies: {
+      getAll() { return cookieStore.getAll(); },
+      setAll(cookiesToSet) {
+        try { cookiesToSet.forEach(({ name, value, options }) => cookieStore.set(name, value, options)); }
+        catch {}
+      },
+    },
+  });
+}
